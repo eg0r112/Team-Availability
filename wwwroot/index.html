@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Availability</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div id="app">
+    <section id="login-view" class="view">
+      <div class="login-card">
+        <div class="brand">
+          <div class="brand-icon">TA</div>
+          <div>
+            <h1>Team Availability</h1>
+            <p>Календарь доступности команды</p>
+          </div>
+        </div>
+        <form id="login-form">
+          <label>Email<input type="email" id="email" value="lead@teamavailability.local" required /></label>
+          <label>Пароль<input type="password" id="password" value="Lead123!" required /></label>
+          <button type="submit" class="btn primary">Войти</button>
+        </form>
+        <p id="login-error" class="error hidden"></p>
+        <p class="hint">Демо: lead@ / Lead123! · admin@ / Admin123!</p>
+      </div>
+    </section>
+
+    <section id="dashboard-view" class="view hidden">
+      <header class="topbar">
+        <div class="brand compact">
+          <div class="brand-icon">TA</div>
+          <span>Team Availability</span>
+        </div>
+        <div class="topbar-actions">
+          <select id="team-select" aria-label="Команда"></select>
+          <input type="date" id="date-picker" aria-label="Дата" />
+          <button id="logout-btn" class="btn ghost">Выйти</button>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="panel">
+          <h2>Доступность на <span id="selected-date-label"></span></h2>
+          <div id="members-grid" class="members-grid"></div>
+        </section>
+
+        <div class="split">
+          <section class="panel">
+            <h2>On-call смены</h2>
+            <div id="oncall-list" class="list"></div>
+          </section>
+          <section class="panel">
+            <h2>Jira — доступные</h2>
+            <div id="jira-panel" class="list"></div>
+          </section>
+        </div>
+      </main>
+    </section>
+  </div>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

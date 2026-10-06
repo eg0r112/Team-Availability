@@ -1,0 +1,17 @@
+bin/
+obj/
+.vs/
+.idea/
+*.user
+*.suo
+appsettings.json
+appsettings.*.local.json
+!.env.example
+!.appsettings.example.json
+.env
+.env.*
+!.env.example
+
+# Локальные заметки — не для репозитория
+*.txt
+*.pdf
